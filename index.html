@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>모바일 청첩장</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+	
+<body>
+
+	
+<!-- OPEN 인트로 -->
+<div id="intro" class="intro">
+  <div class="intro-box">
+
+	  
+	  <img src="images/intro.jpg" class="intro-photo" alt="웨딩사진">
+ 
+	  
+    <p>Wedding Invitation</p>
+
+    <h1>
+      이준재
+      <span>♥</span>
+      홍형선
+    </h1>
+
+    <button id="openBtn">OPEN</button>
+
+  </div>
+</div>
+	
+	
+	<!-- 꽃잎 -->
+<div class="petals">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>	
+	
+	
+	<!-- 배경음악 -->
+<audio id="bgMusic" loop>
+  <source src="music/wedding.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" class="music-btn">▶</button>
+
+<section class="main">
+
+    <img src="images/main.jpg" alt="웨딩사진">
+
+    <div class="main-text">
+
+        <p>Wedding Invitation</p>
+
+        <h1>
+            이준재
+            <span>♥</span>
+            홍형선
+        </h1>
+
+        <h3>
+            2026.08.09 SUN<br>
+            PM 2:00
+        </h3>
+
+        <span class="scroll">
+            Scroll
+        </span>
+
+    </div>
+
+</section>	
+	
+	
+<section class="gallery fade-up">	
+	
+
+    <p class="small-title">
+        INVITATION
+    </p>
+
+    <h2>
+        소중한 분들을 초대합니다
+    </h2>
+
+    <p class="invite-text">
+
+        저희 두 사람의 작은 만남이<br>
+        사랑의 결실을 이루어<br>
+        소중한 결혼식을 올리게 되었습니다.<br><br>
+
+        평생 서로 귀하게 여기며<br>
+        첫 마음 그대로 존중하고<br>
+        배려하며 살겠습니다.<br><br>
+
+        귀한 걸음으로 축복해 주시면<br>
+        더없는 기쁨으로 간직하겠습니다.
+
+    </p>
+
+</section>	
+	
+	
+<section class="wedding-calendar">
+
+  <p class="calendar-date">2026.08.09</p>
+  <p class="calendar-time">일요일 오후 2시</p>
+
+  <div class="calendar-line"></div>
+
+  <div class="calendar-grid week">
+    <span class="sun">일</span>
+    <span>월</span>
+    <span>화</span>
+    <span>수</span>
+    <span>목</span>
+    <span>금</span>
+    <span>토</span>
+  </div>
+
+  <div class="calendar-grid days">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span>1</span>
+    <span class="sun">2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+    <span class="wedding-day">9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span class="sun">15</span>
+    <span class="sun">16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span>
+    <span class="sun">23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span>
+    <span class="sun">30</span><span>31</span>
+  </div>
+
+  <div class="calendar-line"></div>
+
+  <div class="dday-count">
+    <div><p>DAYS</p><strong id="days">0</strong></div>
+    <span>:</span>
+    <div><p>HOUR</p><strong id="hours">0</strong></div>
+    <span>:</span>
+    <div><p>MIN</p><strong id="minutes">0</strong></div>
+    <span>:</span>
+    <div><p>SEC</p><strong id="seconds">0</strong></div>
+  </div>
+
+  <p class="dday-text">
+    지산, 유민의 결혼식이 <span id="ddayText">0</span>일 남았습니다.
+  </p>
+
+</section>	
+	
+	
+	
+<section class="gallery">
+
+    <p class="small-title">
+        GALLERY
+    </p>
+
+    <h2>
+        우리의 순간
+    </h2>
+
+    <div class="gallery-wrap">
+
+        <img src="images/photo01.jpg" alt="">
+        <img src="images/photo02.jpg" alt="">
+        <img src="images/photo03.jpg" alt="">
+        <img src="images/photo04.jpg" alt="">
+        <img src="images/photo05.jpg" alt="">
+        <img src="images/photo06.jpg" alt="">
+
+    </div>
+
+</section>	
+	
+	<div id="lightbox" class="lightbox">
+
+    <button id="closeLightbox" class="close-lightbox">×</button>
+
+    <button id="prevPhoto" class="gallery-arrow prev-photo">‹</button>
+
+    <img id="lightboxImg" src="" alt="확대 이미지">
+
+    <button id="nextPhoto" class="gallery-arrow next-photo">›</button>
+
+</div>
+	
+	
+<section class="location fade-up">
+
+    <p class="small-title">LOCATION</p>
+
+    <h2>오시는 길</h2>
+
+	
+	<h3 id="hallName"></h3>
+
+    <p class="address" id="hallAddress"></p>
+	
+	
+	
+   <!-- <h3>루벨 강동점</h3>
+
+    <p class="address">
+        서울특별시 강동구 천호대로 1077
+    </p>  -->
+
+	
+	
+	
+	
+	
+    <div class="map-btn">
+
+      
+		
+	<a id="naverMap" target="_blank">네이버지도</a>
+
+    <a id="kakaoMap" target="_blank">카카오맵</a>	
+		
+		
+	<!--	<a href="#" id="naverMap">
+            네이버지도
+        </a>
+
+        <a href="#" id="kakaoMap">
+            카카오맵
+        </a>  -->
+
+    </div>
+
+</section>	
+	
+	
+	
+		
+	
+<section class="story">
+
+  <p class="small-title">OUR STORY</p>
+  <h2>우리의 이야기</h2>
+
+  <div class="story-line">
+
+    <div class="story-item">
+      <span>2018</span>
+      <h3>첫 만남</h3>
+      <p>서로의 일상 속에 조용히 스며들었던 첫 만남.</p>
+    </div>
+
+    <div class="story-item">
+      <span>2021</span>
+      <h3>함께한 시간</h3>
+      <p>평범한 하루들이 모여 소중한 추억이 되었습니다.</p>
+    </div>
+
+    <div class="story-item">
+      <span>2025</span>
+      <h3>프로포즈</h3>
+      <p>앞으로의 시간을 함께하자는 약속을 나누었습니다.</p>
+    </div>
+
+    <div class="story-item">
+      <span>2026</span>
+      <h3>결혼</h3>
+      <p>이제 두 사람이 하나의 길을 걸어가려 합니다.</p>
+    </div>
+
+  </div>
+
+</section>	
+	
+
+	
+	
+	
+	<section class="contact">
+
+  <p class="small-title">CONTACT</p>
+  <h2>연락하기</h2>
+
+  <div class="accordion">
+
+    <button class="accordion-title">신랑측 연락하기 ▼</button>
+
+    <div class="accordion-content">
+      <div class="contact-row">
+        <span>신랑 홍형선</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+
+      <div class="contact-row">
+        <span>아버지 성준수</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+
+      <div class="contact-row">
+        <span>어머니 이명호</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="accordion">
+
+    <button class="accordion-title">신부측 연락하기 ▼</button>
+
+    <div class="accordion-content">
+      <div class="contact-row">
+        <span>신부 이준재</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+
+      <div class="contact-row">
+        <span>아버지 이종진</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+
+      <div class="contact-row">
+        <span>어머니 조성은</span>
+        <a href="tel:01012345678">전화</a>
+        <a href="sms:01012345678">문자</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+	
+	
+	
+<section class="account">
+
+  <p class="small-title">ACCOUNT</p>
+  <h2>마음 전하실 곳</h2>
+
+  <div class="accordion">
+
+    <button class="accordion-title">신랑측 계좌번호 ▼</button>
+
+    <div class="accordion-content">
+      <div class="account-row">
+        <span>신랑 홍형선<br>국민은행 123456-12-123456</span>
+        <button onclick="copyAccount('국민은행 123456-12-123456')">복사</button>
+      </div>
+
+      <div class="account-row">
+        <span>혼주 이종진<br>국민은행 111111-11-111111</span>
+        <button onclick="copyAccount('국민은행 111111-11-111111')">복사</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="accordion">
+
+    <button class="accordion-title">신부측 계좌번호 ▼</button>
+
+    <div class="accordion-content">
+      <div class="account-row">
+        <span>신부 이준재<br>국민은행 123456-12-654321</span>
+        <button onclick="copyAccount('국민은행 123456-12-654321')">복사</button>
+      </div>
+
+      <div class="account-row">
+        <span>혼주 성준수<br>국민은행 222222-22-222222</span>
+        <button onclick="copyAccount('국민은행 222222-22-222222')">복사</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>	
+	
+	
+	
+	
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
