@@ -457,7 +457,7 @@ cursor:pointer;
 
 }
 	
-}/* ==========================
+/* ==========================
    WEDDING CALENDAR
 ========================== */
 
@@ -561,11 +561,16 @@ cursor:pointer;
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.92);
+
+  background: rgba(246,242,236,.96);
+
   z-index: 10000;
+
   align-items: center;
   justify-content: center;
 }
+
+
 
 .lightbox.active {
   display: flex;
@@ -585,8 +590,9 @@ cursor:pointer;
   right: 26px;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 42px;
+  color:#8b6b45;
+	
+ font-size: 42px;
   cursor: pointer;
 }
 
@@ -598,8 +604,11 @@ cursor:pointer;
   height: 46px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,.18);
-  color: #fff;
+	
+background: rgba(184,137,82,.15);
+
+color:#8b6b45;	
+
   font-size: 42px;
   line-height: 42px;
   cursor: pointer;
