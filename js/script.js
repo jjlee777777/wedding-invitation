@@ -255,3 +255,23 @@ document.getElementById("hallAddress").textContent = weddingInfo.address;
 document.getElementById("naverMap").href = weddingInfo.naver;
 
 document.getElementById("kakaoMap").href = weddingInfo.kakao;
+
+
+// 갤러리 손가락 스와이프
+let startX = 0;
+
+lightbox.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    nextPhoto.click();
+  }
+
+  if (endX - startX > 50) {
+    prevPhoto.click();
+  }
+});
