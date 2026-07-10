@@ -76,7 +76,7 @@ function copyAccount(account) {
 }
 
 // D-Day 카운트다운
-const weddingDate = new Date("2026-08-09T14:00:00").getTime();
+const weddingDate = new Date("2026-08-15T14:00:00").getTime();
 
 function updateDday() {
   const now = new Date().getTime();
