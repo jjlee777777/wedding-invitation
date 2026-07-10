@@ -76,7 +76,14 @@ function copyAccount(account) {
 }
 
 // D-Day 카운트다운
+
+
+// 결혼식 날짜와 시간
 const weddingDate = new Date("2026-08-15T14:00:00").getTime();
+
+// 결혼식 당일 시작과 종료
+const weddingDayStart = new Date("2026-08-15T00:00:00").getTime();
+const weddingDayEnd = new Date("2026-08-15T23:59:59").getTime();
 
 function updateDday() {
   const now = new Date().getTime();
@@ -86,31 +93,69 @@ function updateDday() {
   const hoursEl = document.getElementById("hours");
   const minutesEl = document.getElementById("minutes");
   const secondsEl = document.getElementById("seconds");
-  const ddayTextEl = document.getElementById("ddayText");
+  const ddayTextEl = document.querySelector(".dday-text");
 
-  if (!daysEl || !hoursEl || !minutesEl || !secondsEl || !ddayTextEl) {
+  if (
+    !daysEl ||
+    !hoursEl ||
+    !minutesEl ||
+    !secondsEl ||
+    !ddayTextEl
+  ) {
     return;
   }
 
-  if (distance <= 0) {
-    daysEl.textContent = "0";
-    hoursEl.textContent = "00";
-    minutesEl.textContent = "00";
-    secondsEl.textContent = "00";
-    ddayTextEl.textContent = "0";
+  // 1. 결혼식 당일: 오전 0시부터 밤 12시 전까지
+  if (now >= weddingDayStart && now <= weddingDayEnd) {
+   
+  daysEl.innerHTML = '<span class="heart-symbol">♥</span>';
+hoursEl.innerHTML = '<span class="heart-symbol">♥</span>';
+minutesEl.innerHTML = '<span class="heart-symbol">♥</span>';
+secondsEl.innerHTML = '<span class="heart-symbol">♥</span>';
+	  
+    ddayTextEl.innerHTML =
+      `오늘은 준호 ♥ 서연의 결혼식입니다.<br>
+       두 사람의 새로운 시작을 축하해 주세요.`;
+
     return;
   }
 
+  // 2. 결혼식이 지난 후
+  if (now > weddingDayEnd) {
+
+	daysEl.innerHTML = '<span class="heart-symbol">♥</span>';
+hoursEl.innerHTML = '<span class="heart-symbol">♥</span>';
+minutesEl.innerHTML = '<span class="heart-symbol">♥</span>';
+secondsEl.innerHTML = '<span class="heart-symbol">♥</span>';  
+	  
+	
+    ddayTextEl.innerHTML =
+      `준호 ♥ 서연의 결혼식이<br>
+       행복하게 마무리되었습니다.<br>
+       축복해 주셔서 감사합니다.`;
+
+    return;
+  }
+
+  // 3. 결혼식 전
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const hours = Math.floor(
+    (distance / (1000 * 60 * 60)) % 24
+  );
+  const minutes = Math.floor(
+    (distance / (1000 * 60)) % 60
+  );
+  const seconds = Math.floor(
+    (distance / 1000) % 60
+  );
 
   daysEl.textContent = days;
   hoursEl.textContent = String(hours).padStart(2, "0");
   minutesEl.textContent = String(minutes).padStart(2, "0");
   secondsEl.textContent = String(seconds).padStart(2, "0");
-  ddayTextEl.textContent = days;
+
+  ddayTextEl.innerHTML =
+    `준호, 서연의 결혼식이 <span id="ddayText">${days}</span>일 남았습니다.`;
 }
 
 updateDday();
