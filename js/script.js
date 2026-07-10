@@ -4,8 +4,8 @@
 const weddingInfo = {
 
     // 신랑 신부
-    groom: "이준재",
-    bride: "홍형선",
+    groom: "서준호",
+    bride: "한서연",
 
     // 예식일
     date: "2026.08.09",
